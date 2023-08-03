@@ -1,18 +1,21 @@
 #. . . . . . . . . . . . . . . ╰──╮ NUMERICAL IMAGE RENAMER
 
 # . . . . . ╰──╮ INSTRUCTIONS:
-# . . . . . ╰──╮ to run this program, provide the path to your directory for the directory_path variable
+# . . . . . ╰──╮ to run this program, provide the path to your directory with the directory_path variable
 # . . . . . ╰──╮ then, open a terminal and run the following command:
 # . . . . . ╰──╮ python image_rename.py
 
 
-# . . . . . ╰──╮ imports.
+# . . . . . ╰──╮ IMPORTS.
+# . . . . . ╰──╮ os module lets us interact with our computer's file system.
 import os
 
+#. . . . . . . . . . . . . . . ╰──╮ PROGRAM.
 # . . . . . ╰──╮ provide the directory path where your image files are located.
 directory_path = "path/to/your/images"
 
 # . . . . . ╰──╮ list the image files found (file extensions .jpg, .jpeg, .png, .gif).
+# . . . . . ╰──╮ lowercase all file extensions first to catch '.JPG', etc on string matching
 image_files = [f for f in os.listdir(directory_path) if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
 
 # . . . . . ╰──╮ sort the list of image files for most cohesive renaming.
